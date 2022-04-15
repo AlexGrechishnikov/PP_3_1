@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users page</title>
+</head>
+<body>
+<div>
+    <a th:href="@{/users/new}">
+        <button>Добавить</button>
+    </a>
+    <hr/>
+    <th:block th:each="u : ${users}">
+        <a th:href="@{/users/{id}(id=${u.getId()})}">
+        <h1 th:text="${u}"></h1>
+        </a>
+    </th:block>
+</div>
+</body>
+</html>
